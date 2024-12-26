@@ -11,6 +11,7 @@ export const UserStorage = ({children}) => {
    const [loading, setLoading] = useState(false); // estado reativo para o carregamento
    const [error, setError] = useState(null); // estado reativo para erro no carregamento do usuário
    const navigate = useNavigate();
+   
 
    useEffect(() => {
     async function autoLogin(){
