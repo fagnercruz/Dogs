@@ -5,7 +5,7 @@
   gap: 2rem;
 }
 
-.login::before{
+.login::before {
   display: block;
   content: '';
   background: url('../../Assets/login.jpg') no-repeat center center;
@@ -13,19 +13,19 @@
 }
 
 .forms {
-  max-width: 30rem; /* limitando o quanto que a imagem do login pode aumentar */
+  max-width: 30rem;
   padding: 1rem;
+  margin-top: 20vh;
 }
 
-/* para telas pequenas */
 @media (max-width: 40rem) {
-  .login{
+  .login {
     grid-template-columns: 1fr;
   }
   .login::before {
     display: none;
   }
-  .forms{
+  .forms {
     max-width: 100%;
   }
 }

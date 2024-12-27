@@ -1,11 +1,17 @@
 import React from 'react';
-
-/* Home não terá estilos CSS pq ele 
-será apenas para exibir os filhos dele
-*/
+import Feed from './Feed/Feed';
+import Head from './Helper/Head';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <section className="container mainContainer">
+      <Head
+        title="Fotos"
+        description="Home do site Dogs, com o feed de fotos."
+      />
+      <Feed />
+    </section>
+  );
 };
 
 export default Home;

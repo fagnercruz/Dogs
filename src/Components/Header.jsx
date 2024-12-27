@@ -1,26 +1,27 @@
-import { Link, NavLink } from 'react-router-dom';
-
-import Dog from '../Assets/dogs.svg?react'; // usado a partir da versão 4 do vite-plugin-svgr
-import React, { useContext } from 'react';
-import style from './Header.module.css';
+import React from 'react';
+import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
+import Dogs from '../Assets/dogs.svg?react';
 import { UserContext } from '../UserContext';
 
-// import { ReactComponent as Dog } from '../Assets/dogs.svg'; - modo antigo
-
 const Header = () => {
-  const {data} = useContext(UserContext);
+  const { data } = React.useContext(UserContext);
+
   return (
-    <header className={style.header}>
-      <nav className={`${style.nav} container`}>
-        <NavLink to="/" aria-label="Dogs - Home" className={style.logo}>
-          <Dog />
-        </NavLink>
-        {data ? <NavLink to="/conta" className={style.login}>
-          Olá {data.nome} | Minha Conta
-        </NavLink> :  <NavLink to="/login" className={style.login}>
-          Login / Criar
-        </NavLink> }
-       
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to="/" aria-label="Dogs - Home">
+          <Dogs />
+        </Link>
+        {data ? (
+          <Link className={styles.login} to="/conta">
+            {data.nome}
+          </Link>
+        ) : (
+          <Link className={styles.login} to="/login">
+            Login / Criar
+          </Link>
+        )}
       </nav>
     </header>
   );

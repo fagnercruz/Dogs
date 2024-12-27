@@ -1,24 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  padding-top: 4rem;
   margin: 0px;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
-  --type-second: 'Spectral', georgia;
+  --type-second: 'Spectral', Georgia;
   font-family: var(--type-first);
-  padding-top: 64px; /* como o header.module.css na classe .NAV é fixed com altura de 4rem,
-  o elementos ficam por trás. Esse padding força a descida de 4rem que é a autura do header (4*16 = 64px) */
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0px;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   padding: 0px;
   margin: 0px;
@@ -29,22 +33,27 @@ img {
   max-width: 100%;
 }
 
-button, input {
+button,
+input {
   display: block;
   font-size: 1rem;
   font-family: var(--type-first);
   color: #333;
 }
 
-.container {
-  max-width: 1200px; /* pode ser tbm 75rem */
-  padding: 0 1rem;
-  margin: 0px auto; /* alinhado ao centro*/
-}
-
 a {
   text-decoration: none;
   color: #333;
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.mainContainer {
+  margin-top: 2rem;
 }
 
 .title {
@@ -57,7 +66,7 @@ a {
 }
 
 .title::after {
-  content: ' ';
+  content: '';
   display: block;
   width: 1.5rem;
   height: 1.5rem;
@@ -65,19 +74,14 @@ a {
   position: absolute;
   bottom: 5px;
   left: -5px;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   z-index: -1;
-}
-
-.error-msg {
-  color: #f31;
-  margin: 1rem 0;
 }
 
 .animeLeft {
   opacity: 0;
   transform: translateX(-20px);
-  animation: animeLeft .3s forwards;
+  animation: animeLeft 0.3s forwards;
 }
 
 @keyframes animeLeft {
@@ -85,4 +89,18 @@ a {
     opacity: 1;
     transform: initial;
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+.VictoryContainer {
+  height: initial !important;
 }
